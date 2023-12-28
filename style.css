@@ -13,6 +13,9 @@
 
     - 27/12/2023
         Continue with header, add all fonts to headings, have made different classes for page sections with light/dark BGs to colour text more easily. Font stacks not fully supported in variables (?), so copy paste them in as would need to type fallback anyway. Look up using CSS grid for main-nav-options.
+
+    - 28/12/2023
+        Styled main-nav__options tiles and basic interactions, need to add interactivity.
 */
 
 /* ------------- */
@@ -26,6 +29,9 @@
 
     Use percentages to size elements to viewport: https://stackoverflow.com/questions/1622027/percentage-height-html-5-css
         For sizing header to 75% of viewport height... could change to newer vw/vh units? html,body and page-wrap set to 100% height+width.
+    
+    >>> GIT
+    https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository
     
     */
 
@@ -211,7 +217,7 @@ p {
     background-color: var(--main-dark-colour);
 }
 
-/* option tiles <li> */
+/* Option tiles <li> */
 .main-nav-options__option {
     display: flex;
     align-items: center;
