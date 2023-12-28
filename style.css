@@ -83,7 +83,7 @@ body {
 /* Page heading */
 h1 {
     font-family: 'Anton', sans-serif;
-    font-size: 3.5em;
+    font-size: 3em;
     text-transform: uppercase;
     color: var(--main-light-colour);
     margin-top: 0.25em;
@@ -142,7 +142,7 @@ p {
 .page-header {
     position: relative;
     width: 100%;
-    height: 75%; /*doesn't resize with percent, only fixed units???*/
+    height: 75%;
     
     /* border: solid 1px red; */
 }
@@ -189,32 +189,75 @@ p {
 /* ------------ */
 
 .main-nav {
-    position: absolute;
-    bottom: 0;
-    right: 20%;
+    width: 100%;
 }
 
 .main-nav-toggle {
-    background-color: transparent;
+    background-color: var(--main-dark-colour);
     border: none;
+    padding: 0.5em;
 }
 
+/* Options <ul> */
 .main-nav-options {
+    height: 100%;
     list-style-type: none;
+    margin: 0 auto;
+    padding: 1em;
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 1em 1em;
+    background-color: var(--main-dark-colour);
 }
 
+/* option tiles <li> */
 .main-nav-options__option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: solid 3px var(--accent-1);
+    padding: 1em;
+}
+
+
+/* >>> Nav options border colours, cycle between 4 colours */
+
+.main-nav-options__option:nth-child(4n+2) {
+    border: solid 3px var(--accent-3);
+}
+
+.main-nav-options__option:nth-child(4n+3) {
+    border: solid 3px var(--accent-4);
+}
+
+.main-nav-options__option:nth-child(4n+4) {
     border: solid 3px var(--main-light-colour);
 }
 
-.main-nav-options__option a {
+.main-nav-options__option a:link {
     font-size: 1.75em;
     text-decoration: none;
     text-transform: uppercase;
     color: var(--main-light-colour);
 }
 
+.main-nav-options__option a:visited {
+    color: var(--main-light-colour);
+}
+
+/* Option interactions */
+
+.main-nav-options__option:hover {
+    text-decoration: underline;
+    color: var(--main-light-colour);
+    border-width: 4px;
+}
+
+.main-nav-options__option a:active {
+    text-decoration: underline;
+}
 /* ------------------- */
 /* >> PAGE FOOTER      */
 /* ------------------- */
