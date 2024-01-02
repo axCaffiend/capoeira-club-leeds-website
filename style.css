@@ -69,25 +69,44 @@
     --mask-box-square: url("images/Textured-edge-box-1080x1080.svg");
 }
 
+/* >>> Set width and height of full page elements to 100% so % values work for all attributes */
+
 html {
+    margin: 0 auto;
     width: 100%;
     height: 100%;
+
+    /* border: solid 3px purple; */
 }
+
 body {
     margin: 0 auto;
     width: 100%;
     height: 100%;
+
+    /* border: solid 3px yellow; */
 }
 
 .page-wrap {
+    margin: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
+
+    border: solid 3px green;
 }
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
 
 /* >>> HEADINGS */
 
 /* Page heading */
 h1 {
+    border: solid 1px red;
+
     font-family: 'Anton', sans-serif;
     font-size: 3em;
     text-transform: uppercase;
@@ -147,10 +166,11 @@ p {
 
 .page-header {
     position: relative;
+    margin: 0;
     width: 100%;
-    height: 75%;
+    height: 30em; /* Changed to em, % not working */
     
-    /* border: solid 1px red; */
+    border: solid 1px blue;
 }
 
 /* >>> HEADER BACKGROUND VIDEO */
@@ -160,15 +180,15 @@ p {
     display: flex;
     justify-content: center;
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     z-index: -1;
     overflow: hidden;
     
     /* border: solid 2px orange; */
 }
 
-.header-video {
-    margin: 0 auto;
+.header-reel {
+    margin: 0;
     height: 100%;
     width: auto;
 }
@@ -176,18 +196,22 @@ p {
 /* >>> HEADER CONTENT */
 
 .header-content {
+    border: solid 2px red;
+
     position: relative;
-    height: 100%;
-    width: auto;
+    margin: 0 auto;
+    min-height: 93%;
+    max-height: 100%;
+    max-width: 100%; /* IMPORTANT: max-width prevents extra margin growing */
     display: flex;
-    flex-flow: column nowrap; /* change to wrap for other sizes?? */
+    flex-flow: column wrap; /* change to wrap for other sizes?? */
     align-items: center;
     justify-content: space-between;
     padding: 1em;
 }
 
 .header-logo {
-    max-width: 40%;
+    width: 50%;
 }
 
 /* ------------ */
@@ -195,26 +219,34 @@ p {
 /* ------------ */
 
 .main-nav {
-    width: 100%;
+    width: 95%;
+    /* position: absolute; */
+    display: flex;
+    flex-flow: column wrap;
+
+    /* border: solid 1px green; */
 }
 
 .main-nav-toggle {
     background-color: var(--main-dark-colour);
     border: none;
     padding: 0.5em;
+    margin: 0 auto;
+
 }
 
 /* Options <ul> */
 .main-nav-options {
     height: 100%;
     list-style-type: none;
-    margin: 0 auto;
     padding: 1em;
+    margin: 0;
+    background-color: var(--main-dark-colour);
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr;
     gap: 1em 1em;
-    background-color: var(--main-dark-colour);
 }
 
 /* Option tiles <li> */
@@ -224,7 +256,7 @@ p {
     justify-content: center;
     text-align: center;
     border: solid 3px var(--accent-1);
-    padding: 1em;
+    padding: 2em;
 }
 
 

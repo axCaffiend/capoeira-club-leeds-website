@@ -20,19 +20,20 @@
             
         <header class="page-header" id="page-top">
             <div class="header-reel-container">
-                <video class="header-video" width="720" height="406" autoplay loop muted>
+                <video class="header-reel" width="720" height="406" autoplay loop muted>
                     <source src="images/home-page/header-video.mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
 
             <div class="header-content">
+                
                 <img class="header-logo" src="images/capoeira-club-leeds-logo-expanded.svg" alt="Capoeira Club Leeds Logo">
 
                 <h1>Capoeira Club <em>Leeds</em></h1>
             
                 <nav class="main-nav">
-                    <ul class="main-nav-options">
+                    <ul class="main-nav-options" data-menu >
                         <li class="main-nav-options__option"><a href="class-info.html" class="main-nav-options__option-link">Class Info</a></li>
                         <li class="main-nav-options__option"><a href="events-page.html" class="main-nav-options__option-link">Events</a></li>
                         <li class="main-nav-options__option"><a href="about-us.html" class="main-nav-options__option-link">About Us</a></li>
@@ -40,8 +41,8 @@
                     </ul>
 
                     <button class="main-nav-toggle" aria-expanded="false" aria-controls="menu" data-menu-button>
-                        <img src="images/icons/burger-menu-icon-68x50.svg" alt="Open menu icon" width="68px" height="50px">
-                        <img src="images/icons/close-menu-button-44x42.svg" alt="Close menu icon">
+                        <img src="images/icons/burger-menu-icon-68x50.svg" alt="Open menu icon" width="68px" height="50px" data-menu-button-closed>
+                        <img src="images/icons/close-menu-button-44x42.svg" alt="Close menu icon" data-menu-button-open>
                     </button>
                 </nav>
 
@@ -162,5 +163,5 @@
     </div>
     
 </body>
-<script src="menu-button"></script>
+<script src="javascript/menu-button.js"></script>
 </html>
