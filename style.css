@@ -62,7 +62,7 @@
     --accent-2: #8F273F;
     --accent-3: #53A6A7;
     --accent-4: #EE8423;
-    --cta-gradient-colours: var(--accent-1), var(--accent-2);
+    --cta-gradient-colours: #DA222A, #8F273F;
 
     /* Rough edge mask SVGs */
     --mask-box-rect: url("images/Textured-edge-box-1920x1080.svg");
@@ -92,7 +92,7 @@ body {
     width: 100%;
     height: auto;
 
-    border: solid 3px green;
+    /* border: solid 3px green; */
 }
 
 img {
@@ -105,8 +105,7 @@ img {
 
 /* Page heading */
 h1 {
-    border: solid 1px red;
-
+    /* border: solid 1px red; */
     font-family: 'Anton', sans-serif;
     font-size: 3em;
     text-transform: uppercase;
@@ -168,9 +167,9 @@ p {
     position: relative;
     margin: 0;
     width: 100%;
-    height: 30em; /* Changed to em, % not working */
+    height: 35em; /* Changed to em, % not working */
     
-    border: solid 1px blue;
+    /* border: solid 1px blue; */
 }
 
 /* >>> HEADER BACKGROUND VIDEO */
@@ -188,7 +187,7 @@ p {
 }
 
 .header-reel {
-    margin: 0;
+    /* margin: 0 auto; */
     height: 100%;
     width: auto;
 }
@@ -196,12 +195,11 @@ p {
 /* >>> HEADER CONTENT */
 
 .header-content {
-    border: solid 2px red;
+    /* border: solid 2px red; */
 
     position: relative;
     margin: 0 auto;
     min-height: 93%;
-    max-height: 100%;
     max-width: 100%; /* IMPORTANT: max-width prevents extra margin growing */
     display: flex;
     flex-flow: column wrap; /* change to wrap for other sizes?? */
@@ -211,7 +209,8 @@ p {
 }
 
 .header-logo {
-    width: 50%;
+    max-width: 30%;
+    height: auto;
 }
 
 /* ------------ */
@@ -219,10 +218,14 @@ p {
 /* ------------ */
 
 .main-nav {
-    width: 95%;
-    /* position: absolute; */
+    max-width: 100%;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column-reverse wrap;
+    margin: 0 auto;
 
     /* border: solid 1px green; */
 }
@@ -230,9 +233,14 @@ p {
 .main-nav-toggle {
     background-color: var(--main-dark-colour);
     border: none;
+    border-radius: 10%;
     padding: 0.5em;
-    margin: 0 auto;
+    margin-left: auto;
 
+}
+
+.main-nav-toggle-close {
+    padding: 0.75em;
 }
 
 /* Options <ul> */
