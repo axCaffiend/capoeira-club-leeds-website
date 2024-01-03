@@ -111,7 +111,7 @@ h1 {
     text-transform: uppercase;
     color: var(--main-light-colour);
     margin-top: 0.25em;
-    margin-bottom: 0.25em;
+    margin-bottom: 0.25em; 
 }
 
 h1 em {
@@ -165,7 +165,7 @@ p {
 
 .page-header {
     position: relative;
-    margin: 0;
+    margin: 0 auto;
     width: 100%;
     height: 35em; /* Changed to em, % not working */
     
@@ -198,14 +198,18 @@ p {
     /* border: solid 2px red; */
 
     position: relative;
-    margin: 0 auto;
-    min-height: 93%;
+    margin: 0;
+    height: 100%;
     max-width: 100%; /* IMPORTANT: max-width prevents extra margin growing */
     display: flex;
     flex-flow: column wrap; /* change to wrap for other sizes?? */
     align-items: center;
     justify-content: space-between;
     padding: 1em;
+    box-sizing: border-box; /*Ignores h1 padding*/
+
+    /* Darken overlay */
+    background: linear-gradient(0deg, rgba(13,30,38,1) 0%, rgba(83,166,167,0) 50%);
 }
 
 .header-logo {
@@ -222,6 +226,7 @@ p {
     position: fixed;
     bottom: 1em;
     right: 1em;
+    box-sizing: border-box;
 
     display: flex;
     flex-flow: column-reverse wrap;
@@ -233,10 +238,12 @@ p {
 .main-nav-toggle {
     background-color: var(--main-dark-colour);
     border: none;
-    border-radius: 10%;
+    border-radius: 0.5em;
     padding: 0.5em;
     margin-left: auto;
 
+    box-shadow: 0 0 0.5em var(--accent-3);
+    cursor: pointer;
 }
 
 .main-nav-toggle-close {
@@ -246,11 +253,20 @@ p {
 /* Options <ul> */
 .main-nav-options {
     height: 100%;
-    list-style-type: none;
-    padding: 1em;
+    list-style-type: none;    
+    padding: 1.5em;
     margin: 0;
-    background-color: var(--main-dark-colour);
+    box-sizing: border-box;
 
+    /*Shift options box down to merge with mmenu button */
+    padding-bottom: 2em;
+    position: relative;
+    bottom: -1em;
+
+    background-color: var(--main-dark-colour);
+    border-radius: 0.5em;
+
+    /* grid settings */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr;
@@ -265,6 +281,8 @@ p {
     text-align: center;
     border: solid 3px var(--accent-1);
     padding: 2em;
+
+    box-sizing: border-box;
 }
 
 
@@ -281,6 +299,8 @@ p {
 .main-nav-options__option:nth-child(4n+4) {
     border: solid 3px var(--main-light-colour);
 }
+
+/* >> Nav options link text */
 
 .main-nav-options__option a:link {
     font-size: 1.75em;
@@ -309,8 +329,37 @@ p {
 /* ------------------- */
 
 .page-footer {
+    max-width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
     background-color: var(--main-dark-colour);
+    color: var(--main-light-colour);
+    padding: 1em;
+    box-sizing: border-box;
 }
+
+.page-footer a {
+    display: block;
+}
+
+.page-footer_content {
+    display: flex;
+    margin: 0 auto;
+}
+
+.page-footer_content-media {
+
+    border: solid 1px red;
+
+    width: 50%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 0em 2em;
+    padding: 1em;
+}
+
 
 /* ------------------- */
 /* >> PAGE MAIN        */
@@ -319,6 +368,8 @@ p {
 .page-main-content {
     margin: 0 auto;
 }
+
+
 
 /* >>> PAGE SECTIONS */
 
