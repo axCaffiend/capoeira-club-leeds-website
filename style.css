@@ -35,7 +35,10 @@
     
     >>> GIT
     https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository
-    
+
+    >>> CLIPPY
+    Online CSS clip-path generator.
+    https://bennettfeely.com/clippy/
     */
 
     /* FONTS
@@ -133,11 +136,12 @@ h2 {
 
 /* Section sub-heading */
 h3 {
+    /* border: solid 1px blue; */
+
     font-family: 'Anton', sans-serif;
     font-size: 1.5em;
     text-transform: uppercase;
 
-    border: solid 1px blue;
 }
 
 /* >>> DECORATIVE */
@@ -213,13 +217,13 @@ p {
 
     position: relative;
     margin: 0;
+    padding: 2em;
     height: 100%;
     max-width: 100%; /* IMPORTANT: max-width prevents extra margin growing */
     display: flex;
     flex-flow: column wrap; /* change to wrap for other sizes?? */
     align-items: center;
     justify-content: space-between;
-    padding: 1em;
     box-sizing: border-box; /*Ignores h1 padding*/
 
     /* Darken overlay */
@@ -227,7 +231,7 @@ p {
 }
 
 .header-logo {
-    max-width: 30%;
+    max-width: 40%;
     height: auto;
 }
 
@@ -241,6 +245,7 @@ p {
     bottom: 1em;
     right: 1em;
     box-sizing: border-box;
+    z-index: 2;
 
     display: flex;
     flex-flow: column-reverse wrap;
@@ -350,6 +355,7 @@ p {
     background-color: var(--main-dark-colour);
     color: var(--main-light-colour);
     padding: 2em;
+    padding-top: 3em;
     padding-bottom: 3em;
     box-sizing: border-box;
 }
@@ -379,19 +385,20 @@ p {
 
 /* Footer Content */
 .page-footer_content {
-    border: solid 1px yellow;
+    /* border: solid 1px yellow; */
 
-    display: flex;
-    flex-flow: column wrap;
+    display:flex;
+    width: 100%;
+    padding: 2em;
+    flex-flow: column nowrap;
     align-items: center;
-    padding: 1em 0 1em 0;
+    gap: 1.75em;
 }
 
 .page-footer_content-media {
 
-    border: solid 1px red;
+    /* border: solid 1px red; */
     margin: 0 auto;
-    padding: 0 0 1em 0;
 }
 
 .page-footer_content-media-icons {
@@ -401,6 +408,66 @@ p {
 }
 
 
+/* ------------------- */
+/* >> CTA BUTTON LINKS */
+/* ------------------- */
+
+.cta-link {
+    background: linear-gradient(-30deg, var(--cta-gradient-colours));
+    display: inline-block;
+    max-width: 90%;
+    min-width: 66.66%;
+    padding: 1em;
+
+    font-size: 1.75em;
+    font-weight: normal;
+    text-transform: uppercase;
+    
+}
+
+/* Link chevrons after text*/
+.cta-link::after {
+    content: ">>";
+    padding: 0.5em;
+}
+
+.cta-link--l {
+    clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 100%, 0% 100%); /*calc() with polygon may not work outside chrome*/
+    padding: 1em 2em 1em 2em;
+}
+
+.cta-link--xl {
+
+    --slant-value: 1em;
+
+    display: block;
+    padding: 2em 15% 2em 15%;
+    margin-bottom: calc(var(--slant-value) * -1);
+    clip-path: polygon(0 0, 100% var(--slant-value), 100% 100%, 0% 100%);
+
+    position: relative;
+    z-index: 1;
+    top: calc(var(--slant-value) * -1);
+}
+
+.cta-block {
+    position: relative;
+}
+
+.cta-link--m {
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: center;
+    min-width: 33.33%;
+    max-width: 100%;
+}
+
+.cta-link--m::after {
+    display: none;
+}
 /* ------------------- */
 /* >> PAGE BLOCKS      */
 /* ------------------- */
