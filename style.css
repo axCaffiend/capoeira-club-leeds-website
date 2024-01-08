@@ -17,8 +17,12 @@
     - 28/12/2023
         Styled main-nav__options tiles and basic interactions, need to add interactivity.
 
-    - 05/01/2023
+    - 05/01/2024
         Set footer layout with flexbox, need to add button - start creating CTA button base style.
+    
+    - 08/01/2024
+        Did CTA styles, Footer. Linked in slick-slider from jsdelivr CDN. Animation CSS tutorial, transition. 
+        NEXT: Move onto main body styles, start with image-overlay text (rename classes). Only need slick carousel for testimonial cards and About Us gallery?
 */
 
 /* ------------- */
@@ -263,6 +267,7 @@ p {
 
     box-shadow: 0 0 0.5em var(--accent-3);
     cursor: pointer;
+
 }
 
 .main-nav-toggle-close {
@@ -300,6 +305,7 @@ p {
     text-align: center;
     border: solid 3px var(--accent-1);
     padding: 2em;
+    background-color: transparent;
 
     box-sizing: border-box;
 }
@@ -385,14 +391,12 @@ p {
 
 /* Footer Content */
 .page-footer_content {
-    /* border: solid 1px yellow; */
-
-    display:flex;
+    display: flex;
     width: 100%;
-    padding: 2em;
+    padding: 1.5em;
     flex-flow: column nowrap;
     align-items: center;
-    gap: 1.75em;
+    gap: 3em 0em;
 }
 
 .page-footer_content-media {
@@ -411,12 +415,11 @@ p {
 /* ------------------- */
 /* >> CTA BUTTON LINKS */
 /* ------------------- */
+/* - --slant-value is x-value/width in em for clip-path, used to resize padding at same time */
 
 .cta-link {
     background: linear-gradient(-30deg, var(--cta-gradient-colours));
     display: inline-block;
-    max-width: 90%;
-    min-width: 66.66%;
     padding: 1em;
 
     font-size: 1.75em;
@@ -431,9 +434,27 @@ p {
     padding: 0.5em;
 }
 
+.cta-link--m {
+    --slant-value: 20%;
+    clip-path: polygon(0 0, 100% var(--slant-value), 100% 100%, 0 calc(100% - var(--slant-value)));
+    padding: 1.5em;
+    text-align: center;
+}
+
+.cta-link--m::after {
+    display: none;
+}
+
 .cta-link--l {
-    clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 100%, 0% 100%); /*calc() with polygon may not work outside chrome*/
-    padding: 1em 2em 1em 2em;
+    --slant-value: 2em;
+
+    clip-path: polygon(0 0, calc(100% - var(--slant-value)) 0, 100% 100%, 0% 100%); /*calc() with polygon may not work outside chrome?? */
+    padding: 1em 3em 1em 2em;
+    min-width: 66.66%;
+}
+
+.cta-block {
+    position: relative;
 }
 
 .cta-link--xl {
@@ -450,24 +471,7 @@ p {
     top: calc(var(--slant-value) * -1);
 }
 
-.cta-block {
-    position: relative;
-}
 
-.cta-link--m {
-    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    padding-left: 2em;
-    padding-right: 2em;
-    text-align: center;
-    min-width: 33.33%;
-    max-width: 100%;
-}
-
-.cta-link--m::after {
-    display: none;
-}
 /* ------------------- */
 /* >> PAGE BLOCKS      */
 /* ------------------- */
