@@ -22,7 +22,12 @@
     
     - 08/01/2024
         Did CTA styles, Footer. Linked in slick-slider from jsdelivr CDN. Animation CSS tutorial, transition. 
+        NEXT: Need to copy code into slick-sliders.js to initialise.
         NEXT: Move onto main body styles, start with image-overlay text (rename classes). Only need slick carousel for testimonial cards and About Us gallery?
+    
+    - 08/01/2024
+        Changed nav-toggle to overlap, added drop shadow. Changed CTA sizing, added background colour to sections. 
+        NEXT: Work out how to add masks to section edges. 
 */
 
 /* ------------- */
@@ -148,7 +153,7 @@ h3 {
 
 }
 
-/* >>> DECORATIVE */
+/* >>> DECORATIVE TEXT*/
 
 /* Image overlay text */
 h4 {
@@ -177,8 +182,8 @@ a:visited {
 
 p {
     font-family: 'Open Sans', sans-serif;
-    color: var(--main-dark-colour);
-    line-height: 1.5em;
+    line-height: 2em;
+    font-weight: normal;
 }
 
 /* -------------------- */
@@ -247,7 +252,7 @@ p {
     max-width: 100%;
     position: fixed;
     bottom: 1em;
-    right: 1em;
+    right: 0em;
     box-sizing: border-box;
     z-index: 2;
 
@@ -264,6 +269,7 @@ p {
     border-radius: 0.5em;
     padding: 0.5em;
     margin-left: auto;
+    margin-right: 1em;
 
     box-shadow: 0 0 0.5em var(--accent-3);
     cursor: pointer;
@@ -276,19 +282,19 @@ p {
 
 /* Options <ul> */
 .main-nav-options {
-    height: 100%;
+    /* border: solid 1px red; */
     list-style-type: none;    
-    padding: 1.5em;
-    margin: 0;
+    padding: 2em 1.5em;
+    margin: -1em 0em;
     box-sizing: border-box;
 
     /*Shift options box down to merge with mmenu button */
-    padding-bottom: 2em;
-    position: relative;
-    bottom: -1em;
+    /* padding-bottom: 2em;
+    margin-bottom: 1em; */
 
     background-color: var(--main-dark-colour);
     border-radius: 0.5em;
+    box-shadow: 0 0 0.5em var(--accent-3);
 
     /* grid settings */
     display: grid;
@@ -432,6 +438,7 @@ p {
 .cta-link::after {
     content: ">>";
     padding: 0.5em;
+    padding-right: 1.5em;
 }
 
 .cta-link--m {
@@ -449,8 +456,10 @@ p {
     --slant-value: 2em;
 
     clip-path: polygon(0 0, calc(100% - var(--slant-value)) 0, 100% 100%, 0% 100%); /*calc() with polygon may not work outside chrome?? */
-    padding: 1em 3em 1em 2em;
+    padding: 1em;
     min-width: 66.66%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .cta-block {
@@ -478,7 +487,39 @@ p {
 
 .page-main-content {
     margin: 0 auto;
+    
 }
+
+.page-section {
+    /* border: solid 1px red; */
+
+    margin: 0 auto;
+    padding: 2em 0 2em 0;
+    /* max-width: 100%; */
+}
+
+.page-section::after {
+    border: solid 1px red;
+    content: "adkfj";
+    background-color: #0d1e26;
+    mask-image: var(--mask-box-rect);
+}
+
+.page-section p {
+    /* border: solid 1px yellow; */
+
+    padding: 1em 1em 1em 1em;
+}
+
+.page-section--dark {
+    /* border: solid 1px red; */
+    
+    background-color: var(--main-dark-colour);
+    color: var(--main-light-colour); 
+
+}
+
+
 
 
 
