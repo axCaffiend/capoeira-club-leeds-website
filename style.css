@@ -28,6 +28,11 @@
     - 08/01/2024
         Changed nav-toggle to overlap, added drop shadow. Changed CTA sizing, added background colour to sections. 
         NEXT: Work out how to add masks to section edges. 
+
+    - 10/01/2024
+        Added rough edges to bottom of page-sections with ::after. Hid overflow with page-content wrapper.
+        NEXT: Alternate section edge angle
+        NEXT: Start text overlay image styling + other section styles.
 */
 
 /* ------------- */
@@ -141,6 +146,7 @@ h2 {
     font-family: 'Black Han Sans', sans-serif;
     font-size: 2em;
     text-transform: uppercase;
+    text-align: center;
 }
 
 /* Section sub-heading */
@@ -487,6 +493,7 @@ p {
 
 .page-main-content {
     margin: 0 auto;
+    overflow: hidden; /* Hides section rough edges after rotation page-section::after */
     
 }
 
@@ -494,21 +501,31 @@ p {
     /* border: solid 1px red; */
 
     margin: 0 auto;
-    padding: 2em 0 2em 0;
-    /* max-width: 100%; */
-}
-
-.page-section::after {
-    border: solid 1px red;
-    content: "adkfj";
-    background-color: #0d1e26;
-    mask-image: var(--mask-box-rect);
+    padding-top: 3em;
 }
 
 .page-section p {
-    /* border: solid 1px yellow; */
+    padding: 1em;
+    text-align: center;
+}
 
-    padding: 1em 1em 1em 1em;
+.page-section::after {
+    --block-height: 4em;
+    
+    content: " ";
+    background-color: inherit;
+    display: block;
+    width: 110%;
+    height: var(--block-height);
+    position: relative;
+    transform-origin: center;
+    top: calc(var(--block-height) / 2);
+    transform: rotate(5deg);
+
+    mask-image: var(--mask-box-square);
+    mask-size: 105%;
+    mask-position: bottom center;
+    mask-repeat: no-repeat;
 }
 
 .page-section--dark {
@@ -516,6 +533,13 @@ p {
     
     background-color: var(--main-dark-colour);
     color: var(--main-light-colour); 
+}
+
+.page-section--light {
+    /* border: solid 1px red; */
+    
+    background-color: var(--main-light-colour);
+    color: var(--main-dark-colour);
 
 }
 
