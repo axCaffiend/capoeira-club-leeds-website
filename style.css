@@ -538,10 +538,10 @@ p {
 /* >>> NOTE: DOESN'T SCALE HEIGHT TO COVER SECTION EDGE ABOVE 500px */
 
 .page-section::before {
-    --block-height: 4em;
+    --block-height: 3em;
     
-    content: " ";
-    background-color: red;
+    content: "";
+    background-color: inherit;
     display: block;
     width: 110%;
     height: var(--block-height);
@@ -556,8 +556,19 @@ p {
 }
 
 .page-section:nth-of-type(odd)::before {
-    transform: rotate(-5deg);
+
+    transform: rotate(-5deg) translate(-5%, calc(var(--block-height) * -0.5));
 }
+
+.page-section:first-of-type::before {
+    display: none;
+}
+
+.page-section:first-of-type {
+    padding-top: 2em;
+}
+
+/* Page section fill colours */
 
 .page-section--dark {
     /* border: solid 1px red; */
