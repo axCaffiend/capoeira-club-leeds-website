@@ -538,26 +538,27 @@ p {
 /* >>> NOTE: DOESN'T SCALE HEIGHT TO COVER SECTION EDGE ABOVE 500px */
 
 .page-section::before {
-    --block-height: 3em;
+    --block-height: 4em;
     
     content: "";
     background-color: inherit;
+    /* background-color: red; */
     display: block;
     width: 110%;
     height: var(--block-height);
 
     transform-origin: center center;
-    transform: rotate(5deg) translate(-5%, calc(var(--block-height) * -0.5));
+    transform: rotate(5deg) translate(-5%, calc(var(--block-height) * -0.50));
 
     mask-image: var(--mask-box-square);
-    mask-size: 110%;
+    mask-size: 100%;
     mask-position: top center;
     mask-repeat: no-repeat;
 }
 
 .page-section:nth-of-type(odd)::before {
 
-    transform: rotate(-5deg) translate(-5%, calc(var(--block-height) * -0.5));
+    transform: rotate(-5deg) translate(-5%, calc(var(--block-height) * -0.50));
 }
 
 .page-section:first-of-type::before {
