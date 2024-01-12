@@ -501,7 +501,6 @@ p {
 .page-section {
     /* border: solid 1px red; */
 
-    margin: 0 auto;
     padding-bottom: 1em;
     position: relative;
 }
@@ -535,10 +534,10 @@ p {
     transform: rotate(-5deg);
 } */
 
-/* >>> NOTE: DOESN'T SCALE HEIGHT TO COVER SECTION EDGE ABOVE 500px */
+/* >>> NOTE: change --block-height and/or section bottom padding for landscape ratios, also height*/
 
 .page-section::before {
-    --block-height: 4em;
+    --block-height: 10vw;
     
     content: "";
     background-color: inherit;
@@ -546,19 +545,26 @@ p {
     display: block;
     width: 110%;
     height: var(--block-height);
-
-    transform-origin: center center;
-    transform: rotate(5deg) translate(-5%, calc(var(--block-height) * -0.50));
+    margin-bottom: calc(var(--block-height) * -0.5);
 
     mask-image: var(--mask-box-square);
     mask-size: 100%;
     mask-position: top center;
     mask-repeat: no-repeat;
+
+    transform-origin: 50% 50%;
+
+    /* Attributes changed in ::nth-of-type to alternate angles */
+    transform: rotate(5deg) translate(-5%, calc(var(--block-height) * -0.5));
+    clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 100%);
 }
 
 .page-section:nth-of-type(odd)::before {
+    /* Repeated var in block - easier to see */
+    --block-height: 10vw;
 
-    transform: rotate(-5deg) translate(-5%, calc(var(--block-height) * -0.50));
+    transform: rotate(-5deg) translate(-5%, calc(var(--block-height) * -0.5));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 25%);
 }
 
 .page-section:first-of-type::before {
