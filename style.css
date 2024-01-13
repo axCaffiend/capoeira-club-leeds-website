@@ -33,6 +33,9 @@
         Added rough edges to bottom of page-sections with ::after. Hid overflow with page-content wrapper.
         NEXT: Alternate section edge angle
         NEXT: Start text overlay image styling + other section styles.
+    
+    - 13/01/2024
+        Footer: Added line decorations. Finalised footer content spacing and sizing for mobile (again). cta-link--m: decreased text size, added margin. 
 */
 
 /* ------------- */
@@ -389,7 +392,6 @@ p {
 }
 
 .page-footer_small-links {
-    /* border: solid 1px red; */
     width: 100%;
 }
 
@@ -405,11 +407,46 @@ p {
 /* Footer Content */
 .page-footer_content {
     display: flex;
-    width: 100%;
-    padding: 1.5em;
     flex-flow: column nowrap;
-    align-items: center;
-    gap: 3em 0em;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 2em;
+    row-gap: 1em;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+/* Footer Content - line decorations */
+.page-footer_content::before {
+    content: "";
+    display: block;
+    height: 1em;
+    width: 100%;
+    margin: 0 auto;
+    border-top: solid 5px var(--accent-4);
+    border-bottom: solid 5px var(--accent-3);
+    
+    /* Line lengths control */
+    --top-length: 90%;
+    --bottom-length: 75%;
+    
+    --top-offset: calc(calc(100% - var(--top-length)) * 0.5);
+    --bottom-offset: calc(calc(100% - var(--bottom-length)) * 0.5);
+    
+    /* Creates a T shape clip mask */
+    /* background-color: red; */
+
+    clip-path: polygon(
+        calc(100% - var(--top-offset)) 0, /*From top right point*/
+        calc(100% - var(--top-offset)) 50%, 
+        calc(100% - var(--bottom-offset)) 50%, 
+        calc(100% - var(--bottom-offset)) 100%, 
+        var(--bottom-offset) 100%, 
+        var(--bottom-offset) 50%, 
+        0 50%,
+        0 0
+    );
 }
 
 .page-footer_content-media {
@@ -435,7 +472,7 @@ p {
     display: inline-block;
     padding: 1em;
 
-    font-size: 1.75em;
+    font-size: 1.5em;
     font-weight: normal;
     text-transform: uppercase;
     
@@ -452,6 +489,7 @@ p {
     --slant-value: 20%;
     clip-path: polygon(0 0, 100% var(--slant-value), 100% 100%, 0 calc(100% - var(--slant-value)));
     padding: 1.5em;
+    margin: 0.75em;
     text-align: center;
 }
 
