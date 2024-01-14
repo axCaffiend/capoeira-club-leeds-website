@@ -36,6 +36,8 @@
     
     - 13/01/2024
         Footer: Added line decorations. Finalised footer content spacing and sizing for mobile (again). cta-link--m: decreased text size, added margin. 
+        
+        >>> NEXT: Start text overlay image styling + other section styles. <<<
 */
 
 /* ------------- */
@@ -120,7 +122,7 @@ body {
 
 img {
     display: block;
-    max-width: 100%;
+    width: 100%;
 }
 
 
@@ -530,15 +532,17 @@ p {
 /* >> PAGE BLOCKS      */
 /* ------------------- */
 
+/* >>> PAGE SECTIONS */
+
 .page-main-content {
     margin: 0 auto;
-    overflow: hidden; /* Hides section rough edges after rotation page-section::after */
+    /* Hides section rough edges after rotation page-section::after */
+    overflow: hidden;
     
 }
 
 .page-section {
     /* border: solid 1px red; */
-
     padding-bottom: 1em;
     position: relative;
 }
@@ -575,7 +579,7 @@ p {
 /* >>> NOTE: change --block-height and/or section bottom padding for landscape ratios, also height*/
 
 .page-section::before {
-    --block-height: 10vw;
+    --block-height: 11vw;
     
     content: "";
     background-color: inherit;
@@ -627,17 +631,46 @@ p {
     
     background-color: var(--main-light-colour);
     color: var(--main-dark-colour);
-
+    
 }
 
 
+/* >>> IMAGE GALLERY */
 
+.image-gallery {
+    margin: 0 auto;
+}
 
+.image-gallery img {
+    width: 100%;
+}
 
-/* >>> PAGE SECTIONS */
+/* TEXT OVERLAY */
+.image-gallery_item--text-overlay {
+    position: relative;
+    margin: 0 auto;
+}
+
+.image-gallery_item--text-overlay img {
+    filter: brightness(0.45);
+}
+
+.image-gallery_item--text-overlay p {
+    
+    margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    /* Center element */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    
+    font-family: 'Permanent Marker', cursive;
+    font-size: 4em;
+    mix-blend-mode: difference;
+    
+}
 
 /* >>> INFO BLOCKS */
-
 /* >>> KEY INFO BLOCKS */
-
-/* >>> IMAGE GALLERY */
