@@ -289,7 +289,8 @@ p {
 }
 
 .main-nav-toggle-close {
-    padding: 0.75em;
+    padding: 1em;
+    width: auto;
 }
 
 /* Options <ul> */
@@ -672,5 +673,41 @@ p {
     
 }
 
-/* >>> INFO BLOCKS */
 /* >>> KEY INFO BLOCKS */
+
+.key-info-block {
+    background-color: var(--main-dark-colour);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 1em;
+    position: relative;
+}
+
+.key-info_item {
+    /* border: solid 1px red; */
+
+    padding: 1em;
+    margin: 2em 0;
+    flex: 1;
+}
+
+.key-info_icon {
+    height: 50%;
+    width: auto;
+    margin: 0 auto;
+}
+.key-info_text {
+    font-weight: bold;
+    color: var(--main-light-colour);
+    margin: 0;
+}
+
+.key-info-block .cta-link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 50%);
+}
+/* >>> INFO BLOCKS */
+
