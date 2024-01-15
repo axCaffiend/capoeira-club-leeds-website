@@ -133,6 +133,7 @@ h1 {
     /* border: solid 1px red; */
     font-family: 'Anton', sans-serif;
     font-size: 3em;
+    font-weight: normal;
     text-transform: uppercase;
     color: var(--main-light-colour);
     margin-top: 0.25em;
@@ -162,6 +163,7 @@ h3 {
     font-family: 'Anton', sans-serif;
     font-size: 1.5em;
     text-transform: uppercase;
+    font-weight: normal;
 
 }
 
@@ -735,6 +737,7 @@ p {
     width: auto;
     margin: 0 auto;
 }
+
 .key-info_text {
     font-weight: bold;
     color: var(--main-light-colour);
@@ -749,4 +752,45 @@ p {
     transform: translate(0, 50%);
 }
 /* >>> INFO BLOCKS */
+
+.info-block {
+    padding: 1em 2em;
+    margin: 0;
+}
+
+.info-block p {
+    text-align: left;
+    padding: 0;
+}
+
+/* Underline colours cycle */
+.info-block>h3 {
+    border-bottom: solid 0.25em var(--accent-4);
+    max-width: 40%;
+    margin: 0;
+    padding: 0.25em 0.5em;
+}
+
+.info-block:nth-of-type(2n)>h3 {
+    border-bottom: solid 0.25em var(--accent-3);
+}
+
+.info-block:nth-of-type(3n)>h3 {
+    border-bottom: solid 0.25em var(--accent-2);
+}
+
+.info-block:nth-of-type(4n)>h3 {
+    border-bottom: solid 0.25em var(--accent-1);
+}
+
+/* Alternate text alignment */
+.info-block:nth-of-type(2n) {
+    text-align: right;
+}
+
+.info-block:nth-of-type(2n)>h3, .info-block:nth-of-type(2n)>p {
+    margin: 1em 0 1em auto;
+    text-align: right;
+}
+
 
