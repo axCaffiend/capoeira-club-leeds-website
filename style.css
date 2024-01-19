@@ -465,7 +465,7 @@ p {
 /* ------------------- */
 /* >> CTA BUTTON LINKS */
 /* ------------------- */
-/* - --slant-value is x-value/width in em for clip-path, used to resize padding at same time */
+/* --slant-value is x-value/width in em for clip-path, used to resize padding at same time */
 
 .cta-link {
     background: linear-gradient(-30deg, var(--cta-gradient-colours));
@@ -691,7 +691,7 @@ p {
 
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     position: absolute;
     z-index: 1;
     top: 50%;
@@ -704,7 +704,6 @@ p {
 }
 
 
-
 .testimonial-text blockquote, .testimonial-text p {
     /* border: solid 1px red; */
     font-family: "Anton" , sans-serif;
@@ -713,12 +712,18 @@ p {
     padding: 0;
 }
 
+.testimonial-text p {
+    min-width: 30%;
+    border-top: solid 5px var(--accent-4);
+    padding-top: 1em;
+}
+
 /* >>> KEY INFO BLOCKS */
 
 .key-info-block {
     background-color: var(--main-dark-colour);
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: center;
     padding: 1em;
     position: relative;
