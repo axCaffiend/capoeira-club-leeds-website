@@ -92,6 +92,7 @@
     /* Rough edge mask SVGs */
     --mask-box-rect: url("images/Textured-edge-box-1920x1080.svg");
     --mask-box-square: url("images/Textured-edge-box-1080x1080.svg");
+    --mask-box-rect-p: url("images/Textured-edge-box-1080x1920.svg");
 }
 
 /* >>> Set width and height of full page elements to 100% so % values work for all attributes */
@@ -156,7 +157,7 @@ h2 {
     margin: 0;
 }
 
-/* Section sub-heading */
+/* Info block heading */
 h3 {
     /* border: solid 1px blue; */
 
@@ -174,6 +175,13 @@ h4 {
     font-family: 'Permanent Marker', cursive;
     font-size: 1em;
     font-weight: bold;
+}
+
+/* Info-block sub-heading */
+h5 {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 1em;
 }
 
 /* >>> LINKS */
@@ -730,19 +738,21 @@ p {
     flex-flow: row wrap;
     justify-content: center;
     padding: 1em;
+    padding-bottom: 3em;
+
     position: relative;
+    margin-bottom: -1em;
 }
 
 .key-info_item {
     /* border: solid 1px red; */
-
+    width: 50%;
     padding: 1em;
-    margin: 2em 0;
-    flex: 1;
+    box-sizing: border-box;
 }
 
 .key-info_icon {
-    height: 50%;
+    height: 60px;
     width: auto;
     margin: 0 auto;
 }
@@ -755,30 +765,34 @@ p {
 
 .key-info-block .cta-link {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     bottom: 0;
     left: 0;
     transform: translate(0, 50%);
 }
+
 /* >>> INFO BLOCKS */
+/* Inherits colours from page-section*/
 
 .info-block {
-    padding: 0.5em 2em;
     margin: 0;
 }
 
 .info-block p {
     text-align: left;
-    padding: 0;
+    padding: 1em 2em;
     max-width: 75ch; /* Readability */
 }
 
 /* Underline colours cycle */
 .info-block>h3 {
+    display: inline-block;
     border-bottom: solid 0.25em var(--accent-4);
-    max-width: 40%;
-    margin: 0;
-    padding: 0.25em 0.5em;
+    min-width: 40%;
+    max-width: 80%;
+    margin: 1em;
+    margin-bottom: 0;
+    padding: 0.25em 0;
 }
 
 .info-block:nth-of-type(2n)>h3 {
@@ -798,11 +812,13 @@ p {
     text-align: right;
 }
 
-.info-block:nth-of-type(2n)>h3, .info-block:nth-of-type(2n)>p {
-    margin: 1em 0 1em auto;
+.info-block:nth-of-type(2n)>p {
     text-align: right;
 }
 
+/* Info-block media */
+
+/* Faded edges */
 .info-block_bg-img {
 
     object-fit: cover;
@@ -811,5 +827,49 @@ p {
     mask-image: linear-gradient(0deg, rgba(13,30,38,0) 0%, rgba(13,30,38,100) 25%, rgba(13,30,38,100) 75%, rgba(13,30,38,0) 100%);
 }
 
+/* Regular images & video */
+/* - In class info page */
+
+.info-block_img {
+    width: 100%;
+    height: auto;
+}
+
+.info-block_vid {
+    width: 100%;
+    height: auto;
+}
+
+.info-card-block {
+    border: solid 1px red;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+}
 
 
+.info-card {
+
+    background-color: var(--main-dark-colour);
+    color: var(--main-light-colour);
+    position: relative;
+    max-width: 45%;
+    padding: 1.5em;
+    margin: 0.5em;
+    box-sizing: border-box;
+    
+    mask-image: var(--mask-box-rect-p);
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+}
+
+.info-card_icon, .info-card_text {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    color: var(--main-light-colour);
+}
