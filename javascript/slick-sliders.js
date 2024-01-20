@@ -6,5 +6,5 @@ $(document).ready(function(){
     autoplaySpeed: 3000,
   });
 
-  alert("slick-slider running")
+  // alert("slick-slider running")
 });

@@ -3,9 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class Info</title>
+    <title>Capoeira Club Leeds - Class Info</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100;200;300;400;500;600;700&family=Black+Han+Sans&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
+    <div class="page-wrap">
+
+        <!-- **** HEADER ****
+        For each page change:
+            - Background video / image
+            - Title and em words -->
+            
+        <header class="page-header" id="page-top">
+            <div class="header-reel-container">
+                <video class="header-reel" width="720" height="406" autoplay loop muted>
+                    <source src="images/class-info/class-info-reel.mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="header-content">
+                
+                <a href="index.html" class="header-logo">
+                    <img src="images/capoeira-club-leeds-logo-expanded.svg" alt="Capoeira Club Leeds Logo">
+                </a>
+
+                <h1>Class <em>Info</em></h1>
+            
+                
+            </div>
+        </header>
+
+        <!-- **** MAIN NAV **** -->
+
+        <nav class="main-nav">
+
+            <button class="main-nav-toggle" aria-expanded="false" aria-controls="menu" data-menu-button>
+                <img src="images/icons/burger-menu-icon-68x50.svg" alt="Open menu icon" width="68px" height="50px" data-menu-button-closed class="main-nav-toggle-menu">
+                <img src="images/icons/close-menu-button-44x42.svg" alt="Close menu icon" width="44px" height="42px" data-menu-button-open class="main-nav-toggle-close">
+            </button>
+
+            <ul class="main-nav-options" data-menu >
+                <li class="main-nav-options__option"><a href="class-info.html" class="main-nav-options__option-link">Class Info</a></li>
+                <li class="main-nav-options__option"><a href="events-page.html" class="main-nav-options__option-link">Events</a></li>
+                <li class="main-nav-options__option"><a href="about-us.html" class="main-nav-options__option-link">About Us</a></li>
+                <li class="main-nav-options__option"><a href="contact-us.html" class="main-nav-options__option-link">Contact</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- **** PAGE CONTENT **** -->
+
+        <main class="page-main-content">
+
+            <!-- INTRO -->
+            <article class="page-section page-section--light">
+                <p>
+                    Here at Capoeira Club Leeds, we train every week on Thursday evenings in our new city centre location at The Middle Floor studio.
+                    No matter your background or previous experience, we welcome everyone from advanced to complete beginners!
+                </p>
+
+                <section class="key-info-block">
+                    <div class="key-info_item">
+                        <img src="images/icons/clock-icon.svg" alt="Clock icon." class="key-info_icon">
+                        <p class="key-info_text">
+                            Every Thursday 7.30pm - 9pm
+                        </p>
+                    </div>
+
+                    <div class="key-info_item">
+                        <img src="images/icons/location-pin-icon.svg" alt="Clock icon." class="key-info_icon">
+                        <p class="key-info_text">
+                            The Middle Floor<br> 
+                            23-25 Wharf St<br>
+                            Leeds LS2 7EQ
+                        </p>
+                    </div>
+
+                    <div class="key-info_item">
+                        <img src="images/icons/pound-sign.svg" alt="Clock icon." class="key-info_icon">
+                        <p class="key-info_text">
+                            £10 per class
+                        </p>
+                    </div>
+                </section>
+            </article>
+
+            <!-- WHAT TO EXPECT -->
+
+            <article class="page-section page-section--light">
+                <h2>What to expect</h2>
+
+                <section class="info-block">
+                    <img src="images/class-info/desktop/classes-music.jpg" alt="">
+                    <h3>Music</h3>
+                    <p>
+                        We start the first 30 minutes or so learning a capoeira song together and practising how to use different instruments - such as the atabaque (drum), berimbau, and pandeiro (tambourine). No musical experience is required, just enjoy!
+                    </p>
+                </section>
+
+                <section class="info-block">
+                    <img src="images/class-info/desktop/classes-movement.jpg" alt="">
+                    <h3>Movement</h3>
+                    <p>
+                        The main part of our session - after a quick warm up, we focus on learning or refining moves, then combine them to create a sequence. Expect a full workout and feel free to ask for help with anything you're unsure about.
+                    </p>
+                </section>
+
+                <section class="info-block">
+                    <video width="720px" height="1280px" loop muted controls alt="Roda with Professor Zumbi">
+                        <source src="images/class-info/Batizado roda-zumbi-mestre-acordeon.mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>Roda</h3>
+                    <p>
+                        We finish with a roda, where we play short capoeira games within a circle. This is a chance to practise what we've learnt in class or try new techniques - it's not formal so we encourage everyone to play and try out what we've covered in the class within a game.
+                    </p>
+                </section>
+            </article>
+
+            <!-- WHY CAPOEIRA? -->
+
+            <article class="page-section page-section--light">
+                <h2>Why Capoeira?</h2>
+
+                <section class="info-card">
+                    <img src="images/class-info/flexibility.svg" alt="Icon - stick person doing a bridge pose" class="info-card_icon">
+                    <p class="info-card-text">
+                        Enhance your flexibility and mobility
+                    </p>
+                </section>
+
+                <section class="info-card">
+                    <img src="images/class-info/balance.svg" alt="Icon - stick person doing a high kick" class="info-card_icon">
+                    <p class="info-card-text">
+                        Improve your balance and strength
+                    </p>
+                </section>
+
+                <section class="info-card">
+                    <img src="images/class-info/agility.svg" alt="Icon - stick person doing a side lunge" class="info-card_icon">
+                    <p class="info-card-text">
+                        Train your coordination and agility
+                    </p>
+                </section>
+                
+                <section class="info-card">
+                    <img src="images/class-info/inspiration.svg" alt="Icon - stick person doing a handstand" class="info-card_icon">
+                    <p class="info-card-text">
+                        Inspiration for dance and bodyweight skills
+                    </p>
+                </section>
+                
+                <section class="info-card">
+                    <img src="images/class-info/have-fun.svg" alt="Icon - stick person doing a one arm handstand" class="info-card_icon">
+                    <p class="info-card-text">
+                        Have fun! Join a vibrant and diverse community.
+                    </p>
+                </section>
+            </article>
+
+            <article class="page-section page-section--dark">
+                <h2>Professor Zumbi</h2>
+                <img src="images/class-info/desktop/Zumbi-portrait.jpg" alt="Professor Zumbi">
+                <p>
+                    All our classes are led by Professor Zumbi who has over a decade of experience in capoeira and other martial arts, he's passionate about teaching creative movement and encouraging students on their capoeira journey.
+                </p>
+                <a href="" class="cta-link cta-link--l">More about Zumbi</a>
+            </article>
+
+            <article class="page-section page-section--light">
+                <h2>Extra Info</h2>
+                <section class="info-block">
+                    <h3>The Venue</h3>
+                    <p>
+                        Our new venue is at The Middle Floor (above Wharf Chambers) less than 15 minutes walk from Leeds train station. 
+                    </p>
+                    <h5>Access</h5>
+                    <p>
+                        From the rear courtyard, and up the stairs to the first floor.
+                    </p> 
+                    <h5>Facilities</h5> 
+                    <p>
+                        Changing room, kitchenette and WC on site.
+                        Please see the venue website for more information.
+                    </p>
+
+                </section>
+
+                <section class="info-block">
+                    <h3>Payment</h3>
+                    <p>£10 per class, payment can be taken after the class with cash or by bank transfer.</p>
+                </section>
+
+            </article>
+
+        </main>
+
+        
+        
+
+
+        <!-- **** FOOTER **** -->
+        <footer class="page-footer">
+
+            <a href="#page-top" class="page-footer_page-top">Back to Top</a>
+            
+            <section class="page-footer_content">
+
+                <div class="page-footer_content-media">
+                    <h3>Follow us for updates</h3>
+                    <div class="page-footer_content-media-icons">
+                        <a href="https://www.facebook.com/capoeiraclubleeds/?locale=en_GB"><img src="images/icons/facebook-icon.svg" alt="Facebook icon, link to Capoeira Club Leeds Facebook page."></a>
+
+                        <a href="https://www.instagram.com/capoeiraclubleeds/"><img src="images/icons/instagram-icon.svg" alt="Instagram icon, link to Capoeira Club Leeds Instagram page."></a>
+                    </div>
+                </div>
+
+                <a href="contact-us.html" class="cta-link cta-link--m">Contact Us</a>
+
+                
+            </section>
+            
+            <div class="page-footer_small-links">
+                <a href="#">&copy; 2023 Capoeira Club Leeds</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+
+        </footer>
+
+    </div> <!-- End of .page-wrap-->
+
+    <!-- **** SCRIPTS **** -->
     
+    <script src="javascript/menu-button.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="javascript/slick-sliders.js"></script>
 </body>
+
 </html>
