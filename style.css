@@ -620,12 +620,12 @@ p {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 25%);
 }
 
-.page-section:first-of-type::before {
-    display: none;
-}
-
+/* First page-section */
 .page-section:first-of-type {
     padding-top: 2em;
+}
+.page-section:first-of-type::before {
+    display: none;
 }
 
 /* Page section fill colours */
@@ -777,12 +777,12 @@ p {
 
 .info-block {
     margin: 0;
-    padding: 0 2em;
+    padding: 0;
 }
 
 .info-block p, .info-block h5 {
     text-align: left;
-    padding: 1em;
+    padding: 1.5em;
     margin: 0;
     max-width: 75ch; /* Readability */
 }
@@ -793,8 +793,8 @@ p {
     border-bottom: solid 0.25em var(--accent-4);
     min-width: 40%;
     max-width: 80%;
-    margin-bottom: 0;
-    padding: 0.25em 0;
+    margin: 0.5em 1em;
+    padding: 0.25em;
 }
 
 .info-block:nth-of-type(2n)>h3 {
@@ -810,12 +810,33 @@ p {
 }
 
 /* Alternate text alignment */
-.info-block:nth-of-type(2n) {
+.info-block:nth-of-type(even) {
     text-align: right;
 }
 
-.info-block:nth-of-type(2n)>p, .info-block:nth-of-type(2n)>h5 {
+.info-block:nth-of-type(even)>p, .info-block:nth-of-type(even)>h5 {
     text-align: right;
+}
+
+.info-block.info-block:nth-of-type(even)>.cta-link--l {
+    --slant-value: 2em;
+
+    clip-path: polygon(var(--slant-value) 0, 100% 0, 100% 100%, 0% 100%); /*calc() with polygon may not work outside chrome?? */
+    padding: 1em;
+    margin-bottom: 2em;
+    min-width: 66.66%;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+.info-block.info-block:nth-of-type(even)>.cta-link--l::after {
+    display: none;
+}
+.info-block.info-block:nth-of-type(even)>.cta-link--l::before {
+    content: "<<";
+    padding: 1.5em;
+    padding-right: 0.5em;
 }
 
 /* Info-block media */
