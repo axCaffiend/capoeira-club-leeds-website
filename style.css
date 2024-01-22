@@ -514,6 +514,7 @@ p {
 
     clip-path: polygon(0 0, calc(100% - var(--slant-value)) 0, 100% 100%, 0% 100%); /*calc() with polygon may not work outside chrome?? */
     padding: 1em;
+    margin-bottom: 2em;
     min-width: 66.66%;
     max-width: 100%;
     box-sizing: border-box;
@@ -547,7 +548,7 @@ p {
 .page-main-content {
     margin: 0 auto;
     /* Hides section rough edges after rotation page-section::after */
-    overflow: hidden;
+    overflow: clip;
     
 }
 
@@ -776,11 +777,13 @@ p {
 
 .info-block {
     margin: 0;
+    padding: 0 2em;
 }
 
-.info-block p {
+.info-block p, .info-block h5 {
     text-align: left;
-    padding: 1em 2em;
+    padding: 1em;
+    margin: 0;
     max-width: 75ch; /* Readability */
 }
 
@@ -790,7 +793,6 @@ p {
     border-bottom: solid 0.25em var(--accent-4);
     min-width: 40%;
     max-width: 80%;
-    margin: 1em;
     margin-bottom: 0;
     padding: 0.25em 0;
 }
@@ -812,7 +814,7 @@ p {
     text-align: right;
 }
 
-.info-block:nth-of-type(2n)>p {
+.info-block:nth-of-type(2n)>p, .info-block:nth-of-type(2n)>h5 {
     text-align: right;
 }
 
@@ -840,36 +842,51 @@ p {
     height: auto;
 }
 
+/* >>> INFO CARDS */
+/* - On class info page */
+
 .info-card-block {
-    border: solid 1px red;
+    /* border: solid 1px red; */
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     margin: 0 auto;
-    padding: 0;
+    padding: 3em 0;
 }
 
 
 .info-card {
 
+    /* border: solid 1px lime; */
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
     background-color: var(--main-dark-colour);
     color: var(--main-light-colour);
     position: relative;
-    max-width: 45%;
+    width: 25em;
+    aspect-ratio: 1 / 1;
     padding: 1.5em;
     margin: 0.5em;
     box-sizing: border-box;
     
-    mask-image: var(--mask-box-rect-p);
+    mask-image: var(--mask-box-square);
     mask-position: center center;
     mask-repeat: no-repeat;
-    mask-size: 100%;
+    mask-size: contain;
 }
 
-.info-card_icon, .info-card_text {
-    position: relative;
-    z-index: 1;
+.info-card_icon {
     margin: 0 auto;
+    height: 50%;
+    width: auto;
+}
+
+.info-card_text {
+    /* border: solid 1px red; */
+
     color: var(--main-light-colour);
 }
