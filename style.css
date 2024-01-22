@@ -725,11 +725,7 @@ p {
 }
 /* SLIDER + CAPTION */
 
-/* 
-    Force slides to same height in slider, to center slide content.
-    https://stackoverflow.com/questions/49028877/slick-carousel-force-slides-to-have-the-same-height 
-*/
-
+/* Force slides to center in the track, if different heights */
 .slick-track {
     display: flex !important;
     justify-content: center;
@@ -989,7 +985,7 @@ p {
     padding: 0;
 }
 
-/* Single quote boxes (on about-us page)*/
+/* Single info-card sizes larger (on about-us page)*/
 .info-card:only-of-type {
     width: 20em;
 }

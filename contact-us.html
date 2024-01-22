@@ -3,9 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Capoeira Club Leeds - Class Info</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100;200;300;400;500;600;700&family=Black+Han+Sans&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
+    <div class="page-wrap">
+
+        <!-- **** HEADER ****
+        For each page change:
+            - Background video / image
+            - Title and em words -->
+            
+        <header class="page-header" id="page-top">
+            <div class="header-reel-container">
+                <img class="header-reel" src="images/contact-us/contact-us-header-img.jpg" alt="Group roda 2017, with Professor Zumbi and Professor Negoteta">
+            </div>
+
+            <div class="header-content">
+                
+                <a href="index.html" class="header-logo">
+                    <img src="images/capoeira-club-leeds-logo-expanded.svg" alt="Capoeira Club Leeds Logo">
+                </a>
+
+                <h1>Contact <em>Us</em></h1>
+            
+            </div>
+        </header>
+
+        <!-- **** MAIN NAV **** -->
+
+        <nav class="main-nav">
+
+            <button class="main-nav-toggle" aria-expanded="false" aria-controls="main-nav-options" data-menu-button>
+                <img src="images/icons/burger-menu-icon-68x50.svg" alt="Open menu icon" width="68" height="50" data-menu-button-closed class="main-nav-toggle-menu">
+                <img src="images/icons/close-menu-button-44x42.svg" alt="Close menu icon" width="44" height="42" data-menu-button-open class="main-nav-toggle-close">
+            </button>
+
+            <ul id="main-nav-options" class="main-nav-options" data-menu >
+                <li class="main-nav-options__option"><a href="class-info.html" class="main-nav-options__option-link">Class Info</a></li>
+                <li class="main-nav-options__option"><a href="events-page.html" class="main-nav-options__option-link">Events</a></li>
+                <li class="main-nav-options__option"><a href="about-us.html" class="main-nav-options__option-link">About Us</a></li>
+                <li class="main-nav-options__option"><a href="contact-us.html" class="main-nav-options__option-link">Contact</a></li>
+                
+            </ul>
+
+        </nav>
+
+
+        <!-- **** PAGE CONTENT **** -->
+
+        <main class="page-main-content">
+
+            <article class="page-section page-section--dark">
+                <h2>Social Media</h2>
+                <p>Follow us for the latest updates on class times and events! Message us any questions on Instagram or Facebook.</p>
+                <div class="info-card-block">
+                    <div class="info-card info-card--icons">
+                        <a href="https://www.facebook.com/capoeiraclubleeds/">
+                            <img src="images/icons/facebook-icon.svg" alt="facebook icon" width="60" height="60">
+                        </a>
+                    </div>
+
+                    <div class="info-card info-card--icons">
+                        <a href="https://www.instagram.com/capoeiraclubleeds/">
+                            <img src="images/icons/instagram-icon.svg" alt="instagram icon" width="60" height="60">
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="page-section page-section--light">
+                <h2>Our Class Location</h2>
+                <p>
+                    The Middle Floor<br>
+                    23-25 Wharf St<br>
+                    Leeds LS2 7EQ
+                </p>
+
+                <a href="" class="cta-link cta-link--l">Venue website</a>
+                
+                <div class="google-map-embed">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2356.6626270920547!2d-1.5405508236889756!3d53.79549194102302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48795c177ce76913%3A0xd175e7aaa007abe9!2sMiddle%20Floor!5e0!3m2!1sen!2suk!4v1705964653456!5m2!1sen!2suk" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </article>
+
+            <article class="page-section page-section--dark">
+                <h2>Ask us a Question</h2>
+                <form action="/send_user_message.php" method="post">
+                    <fieldset>
+                        <legend>Your details</legend>
+                        <label for="user-name">Your name</label>
+                        <input type="text" name="user_name" id="user-name" required>
+
+                        <label for="user-email">Your email</label>
+                        <input type="email" name="user_email" id="user-email" required>
+
+                        <label for="user-message">Message</label>
+                        <textarea name="your-message" id="user-message" cols="30" rows="10" placeholder="Your message here" required></textarea>
+                    </fieldset>
+
+                    <input type="submit" value="Submit" class="cta-link cta-link--m">
+                </form>
+            </article>
+
+        </main>
+
+
+        <!-- **** FOOTER **** -->
+        <footer class="page-footer">
+
+            <a href="#page-top" class="page-footer_page-top">Back to Top</a>
+            
+            <section class="page-footer_content">
+
+                <div class="page-footer_content-media">
+                    <h3>Follow us for updates</h3>
+                    <div class="page-footer_content-media-icons">
+                        <a href="https://www.facebook.com/capoeiraclubleeds/?locale=en_GB"><img src="images/icons/facebook-icon.svg" alt="Facebook icon, link to Capoeira Club Leeds Facebook page."></a>
+
+                        <a href="https://www.instagram.com/capoeiraclubleeds/"><img src="images/icons/instagram-icon.svg" alt="Instagram icon, link to Capoeira Club Leeds Instagram page."></a>
+                    </div>
+                </div>
+
+                <a href="contact-us.html" class="cta-link cta-link--m">Contact Us</a>
+
+                
+            </section>
+            
+            <div class="page-footer_small-links">
+                <a href="#">&copy; 2023 Capoeira Club Leeds</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+
+        </footer>
+
+    </div> <!-- End of .page-wrap-->
+
+    <!-- **** SCRIPTS **** -->
     
+    <script src="javascript/menu-button.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="javascript/slick-sliders.js"></script>
 </body>
+
 </html>
