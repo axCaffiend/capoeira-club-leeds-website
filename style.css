@@ -554,7 +554,7 @@ p {
 
 .page-section {
     /* border: solid 1px red; */
-    padding-bottom: 1em;
+    padding-bottom: 3em;
     position: relative;
 }
 
@@ -644,6 +644,46 @@ p {
     color: var(--main-dark-colour);
     
 }
+/* IMAGES IN PAGE-SECTION */
+.page-section_img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    mask-image: var(--mask-box-square);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center center;
+
+}
+
+/* VIDEOS IN PAGE-SECTION */
+
+  /* Video container */
+.page-section_video {
+    /* border: solid 1px lime; */
+    
+    display: block;
+    margin: 0 auto 1em auto;
+    padding: 0;
+    max-width: 30em;
+    height: auto;
+}
+  
+/* Video <video> */
+.page-section_video>video {
+    /* border: solid 1px red; */
+    
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto;
+    max-height: 90vh;
+}
+  /* Video title */
+.page-section_video>h5 {    
+    text-align: center;
+    padding: 1em;
+    margin: 0 auto;
+}
 
 
 /* >>> IMAGE GALLERY STYLES*/
@@ -653,6 +693,7 @@ p {
 }
 
 .image-gallery img {
+    display: block;
     width: 100%;
 }
 
@@ -682,8 +723,40 @@ p {
     mix-blend-mode: difference;
     
 }
+/* SLIDER + CAPTION */
 
-/* TESTIMONIALS */
+/* 
+    Force slides to same height in slider, to center slide content.
+    https://stackoverflow.com/questions/49028877/slick-carousel-force-slides-to-have-the-same-height 
+*/
+
+.slick-track {
+    display: flex !important;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.image-gallery--slider_item {
+    /* border: solid 1px lime; */
+    margin: 0 auto;
+}
+
+.image-gallery--slider {
+    /* border: solid 1px red; */
+    margin: 0 0 3em 0;
+}
+
+.image-gallery--slider_item>p {
+
+    margin: auto;
+    margin-top: 1em;
+    text-align: center;
+    padding: 1em;
+    max-width: 60%;
+    border-top: solid 5px var(--accent-4);
+}
+
+/* >>> TESTIMONIALS */
 .testimonials {
     margin: 0 auto;
     margin-bottom: -1em;
@@ -717,7 +790,7 @@ p {
 }
 
 
-.testimonial-text blockquote, .testimonial-text p {
+.testimonial-text>blockquote, .testimonial-text>p {
     /* border: solid 1px red; */
     font-family: "Anton" , sans-serif;
     font-size: 1.25em;
@@ -899,9 +972,10 @@ p {
     mask-size: contain;
 }
 
+
 .info-card_icon {
     /* border: solid 1px lime; */
-
+    
     margin: 0 auto;
     width: 50%;
     height: auto;
@@ -910,7 +984,31 @@ p {
 .info-card_text {
     /* border: solid 1px red; */
     margin: 0 auto;
-
+    
     color: var(--main-light-colour);
     padding: 0;
+}
+
+/* Single quote boxes (on about-us page)*/
+.info-card:only-of-type {
+    width: 20em;
+}
+
+.info-card--quote {
+    height: auto;
+    text-align: center;
+    font-family: "Anton" , sans-serif;
+    font-size: 1.25em;
+    color: var(--main-light-colour);
+}
+
+.info-card--quote>p {
+
+    display: inline-block;
+    margin: 0 auto;
+    border-top: solid 5px var(--accent-4);
+    padding: 0.5em;
+    font-family: inherit;
+    text-transform:uppercase;
+    font-size: 1.5em;
 }
