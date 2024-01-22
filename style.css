@@ -887,10 +887,9 @@ p {
 
     background-color: var(--main-dark-colour);
     color: var(--main-light-colour);
-    position: relative;
-    width: 25em;
+    width: 15em;
     aspect-ratio: 1 / 1;
-    padding: 1.5em;
+    padding: 1em;
     margin: 0.5em;
     box-sizing: border-box;
     
@@ -901,13 +900,17 @@ p {
 }
 
 .info-card_icon {
+    /* border: solid 1px lime; */
+
     margin: 0 auto;
-    height: 50%;
-    width: auto;
+    width: 50%;
+    height: auto;
 }
 
 .info-card_text {
     /* border: solid 1px red; */
+    margin: 0 auto;
 
     color: var(--main-light-colour);
+    padding: 0;
 }
